@@ -22,11 +22,27 @@
 		<span class="navbar-dot navbar-span">&#x22ee;</span>
 	</div>
 	
+	<div class="burgerbar">
+		<%= link_to "Order Now", categories_path %>
+	</div>
+	
 	<div class="footer">
 		<h1>Checkout</h1>
 		<h1>Total</h1>
 	</div>
 	
     <%= yield %>
+    
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$('.burgerbar').hide();
+    		$('.navbar-burger').click(function(){
+    			$('.burgerbar').slideToggle();
+    		});
+    		$(".notice, .alert").click(function() {
+    			$(event.target).slideToggle();
+    		});
+    	});
+    </script>
   </body>
 </html>
