@@ -1,3 +1,21 @@
 <div style="height: 50px; width: 100%;"></div>
 
+<% @categories.each do |cat| %>
+	<div class="cat-dropdown">
+		<h1><%= cat.name %> v</h1>
+		<div class="items-box">
+			<h1>Items</h1>
+		</div>
+	</div>
+<% end %>
+
+<script type="text/javascript">
+    	$(document).ready(function(){
+    		$('.items-box').hide();
+    		$('.cat-dropdown').click(function(){
+    			$(this).find('.items-box').slideToggle();
+    		});
+    	});
+    </script>
+
 
