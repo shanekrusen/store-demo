@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<% if notice.present? %>
+	  <p class="notice"><%= notice %></p>
+	<% end %>
+	<% if alert.present? %>
+	  <p class="alert"><%= alert %></p>
+	<% end %>
+	
+	<div class="navbar">
+		<span class="navbar-burger navbar-span">&#x2261;</span>
+		<h1>Title</h1>
+		<span class="navbar-dot navbar-span">&#x22ee;</span>
+	</div>
+	
+	<div class="footer">
+		<h1>Checkout</h1>
+		<h1>Total</h1>
+	</div>
+	
+    <%= yield %>
+  </body>
+</html>
