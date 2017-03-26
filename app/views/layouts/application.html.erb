@@ -42,6 +42,9 @@
     		$(".notice, .alert").click(function() {
     			$(event.target).slideToggle();
     		});
+		  	<% if cookies[:order].nil? %>
+		  		location.href = '/order_cookies/new_order'
+		  	<% end %>
     	});
     </script>
   </body>

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'static#index'
   
   resources :categories, only: :index
+  
+  get 'order_cookies/:action', :controller => :order_cookies
 end
