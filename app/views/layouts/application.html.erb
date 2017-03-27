@@ -26,11 +26,13 @@
 		<%= link_to "Order Now", categories_path %>
 	</div>
 	
-	<div class="footer">
-		<h1>Checkout</h1>
-		<h1 class="delete_order">Clear Order</h1>
-		<h1>Total: $<%= get_total %></h1>
-	</div>
+	<% unless request.path == root_path %>
+		<div class="footer">
+			<h1>Checkout</h1>
+			<h1 class="delete_order">Clear Order</h1>
+			<h1>Total: $<%= get_total %></h1>
+		</div>
+	<% end %>
 	
     <%= yield %>
     
