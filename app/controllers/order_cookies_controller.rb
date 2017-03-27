@@ -11,4 +11,9 @@ class OrderCookiesController < ApplicationController
     cookies[:order] = { value: JSON.generate(@order), expires: 1.hour.from_now }
     redirect_to(:back)
   end
+  
+  def delete_order
+    cookies.delete :order
+    redirect_to(:back)
+  end
 end

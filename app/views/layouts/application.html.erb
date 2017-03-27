@@ -28,7 +28,8 @@
 	
 	<div class="footer">
 		<h1>Checkout</h1>
-		<h1>Total</h1>
+		<h1 class="delete_order">Clear Order</h1>
+		<h1>Total: $<%= get_total %></h1>
 	</div>
 	
     <%= yield %>
@@ -45,6 +46,9 @@
 		  	<% if cookies[:order].nil? %>
 		  		location.href = '/order_cookies/new_order'
 		  	<% end %>
+		  	$('.delete_order').click(function() {
+		  		location.href = '/order_cookies/delete_order'
+		  	});
     	});
     </script>
   </body>
