@@ -15,23 +15,14 @@
 	<%= JSON.parse(cookies[:order]).inspect %>
 <% end %>
 
-<script type="text/javascript">
-		String.prototype.supplant = function (o) {
-		    return this.replace(/{([^{}]*)}/g,
-		        function (a, b) {
-		            var r = o[b];
-		            return typeof r === 'string' || typeof r === 'number' ? r : a;
-		        }
-		    );
-		};
-		
+<script type="text/javascript">				
     	$(document).ready(function(){
     		$('.items-box').hide();
     		$('.cat-dropdown').click(function(){
     			$(this).find('.items-box').slideToggle();
     		});
     		$('.item').click(function(){
-    			location.href = '/order_cookies/add_to_order?item={item}'.supplant({ item: $(this).text() })
+    			location.href = ('/order_cookies/add_to_order?item=' + ($(this).text()) )
     		});
     	});
     </script>
