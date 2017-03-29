@@ -19,9 +19,9 @@
 	<% end %>
 	
 	<div class="navbar">
-		<span class="navbar-burger navbar-span">&#x2261;</span>
+		<span class="navbar-burger navbar-span click">&#x2261;</span>
 		<h1><%= link_to "Title", root_path %></h1>
-		<span class="navbar-dot navbar-span">&#x22ee;</span>
+		<span class="navbar-dot navbar-span click">&#x22ee;</span>
 	</div>
 	
 	<div class="burgerbar">
@@ -31,7 +31,7 @@
 	<% unless request.path == root_path %>
 		<div class="footer">
 			<h1>Checkout</h1>
-			<h1 class="delete_order">Clear Order</h1>
+			<h1 class="delete_order click">Clear Order</h1>
 			<h1>Total: <%= get_total %></h1>
 		</div>
 	<% end %>

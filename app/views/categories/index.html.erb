@@ -2,10 +2,10 @@
 
 <% @categories.each do |cat| %>
 	<div class="cat-dropdown">
-		<h1><%= cat.name %> v</h1>
+		<h1 class="click"><%= cat.name %> v</h1>
 		<div class="items-box">
 			<% cat.items.each do |item| %>
-				<h1 class="item"><%= item.name %></h1>
+				<h1 class="item click"><%= item.name %></h1>
 			<% end %>
 		</div>
 	</div>
