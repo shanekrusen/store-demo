@@ -16,15 +16,15 @@
 <% end %>
 
 <script type="text/javascript">				
-    	$(document).ready(function(){
-    		$('.items-box').hide();
-    		$('.cat-dropdown').click(function(){
-    			$(this).find('.items-box').slideToggle();
-    		});
-    		$('.item').click(function(){
-    			location.href = ('/order_cookies/add_to_order?item=' + ($(this).text()) )
-    		});
-    	});
-    </script>
+	$(document).ready(function(){
+		$('.items-box').hide();
+		$('.cat-dropdown').click(function(){
+			$(this).find('.items-box').slideToggle();
+		});
+		$('.item').click(function(){
+			location.href = ('/order_cookies/add_to_order?item=' + ($(this).text()) )
+		});
+	});
+</script>
 
 

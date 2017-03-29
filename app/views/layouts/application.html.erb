@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   </head>
 
   <body>
@@ -18,7 +20,7 @@
 	
 	<div class="navbar">
 		<span class="navbar-burger navbar-span">&#x2261;</span>
-		<h1>Title</h1>
+		<h1><%= link_to "Title", root_path %></h1>
 		<span class="navbar-dot navbar-span">&#x22ee;</span>
 	</div>
 	
@@ -30,7 +32,7 @@
 		<div class="footer">
 			<h1>Checkout</h1>
 			<h1 class="delete_order">Clear Order</h1>
-			<h1>Total: $<%= get_total %></h1>
+			<h1>Total: <%= get_total %></h1>
 		</div>
 	<% end %>
 	

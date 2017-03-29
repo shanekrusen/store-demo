@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include ActionView::Helpers
+  
   def decimals(a)
     num = 0
     while(a != a.to_i)
@@ -17,21 +19,23 @@ module ApplicationHelper
         @total += @price.price
       end
     end
-    @num = 0
-    while(@total != @total.to_i)
-      @num += 1
-      @total *= 10
-    end
-    if @total == 0
-      
-    elsif @num == 2
-      @total = @total/100
-    elsif @num == 1
-      @total = @total/10
-      @total = @total.to_s + "0"
-    elsif @num == 0
-      @total = @total.to_s + "0"
-    end
+    
+    # @num = 0
+    # while(@total != @total.to_i)
+      # @num += 1
+      # @total *= 10
+    # end
+    # if @total == 0
+#       
+    # elsif @num == 2
+      # @total = @total/100
+    # elsif @num == 1
+      # @total = @total/10
+      # @total = @total.to_s + "0"
+    # elsif @num == 0
+      # @total = @total.to_s + "0"
+    # end
+    @total = number_to_currency(@total)
     return @total
   end
 end
