@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+
 html, body {
   overflow-x: hidden;
   padding: 0px;
-  margin: 0px;;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #ffffff;
 }
 
 .navbar {
-  background: #000000;
+  background: #5787d7;
   color: #FFFFFF;
   width: 100%;
   min-height: 50px;
@@ -17,15 +24,22 @@ html, body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
 }
 
 .navbar h1 {
   font-size: 150%;
+  font-family: 'Pacifico', cursive;
+}
+
+.navbar a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 .burgerbar {
-  background: #252525;
-  color: #000000;
+  background: #5787d7;
+  color: #FFFFFF;
   width: 25%;
   height: calc(75vh - 50px);
   position: fixed;
@@ -38,8 +52,18 @@ html, body {
   border-radius: 0px 0px 5px 0px;
 }
 
+.burgerbar a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 150%;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 2px solid;
+  font-style: italic;
+}
+
 .footer {
-  background: #000000;
+  background: #5787d7;
   color: #FFFFFF;
   width: 100%;
   min-height: 50px;
@@ -73,4 +97,23 @@ html, body {
 
 .click {
   cursor: pointer;
+}
+
+.cat-dropdown {
+  margin: 0px;
+  height: auto;
+  padding: 0px;
+}
+
+.cat-dropdown h1 {
+  margin: 0px;
+  height: auto;
+  padding: 0px;
+  margin-bottom: 5px;
+}
+
+.item {
+  margin: 0px;
+  width: 100%;
+  background: #f0f0f0;
 }
