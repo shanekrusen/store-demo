@@ -75,6 +75,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 -2px 5px 0 rgba(0,0,0,0.26);
 }
 
 .footer h1 {
@@ -116,4 +117,14 @@ body {
   margin: 0px;
   width: 100%;
   background: #f0f0f0;
+}
+
+.sidebar {
+  height: calc(100vh - 100px);
+  width: 25vw;
+  background: #5787d7;
+  color: #FFFFFF;
+  position: fixed;
+  top: 50px;
+  right: 0px;
 }
