@@ -33,9 +33,11 @@
 			<% JSON.parse(cookies[:order]).each do |item| %>
 				<% @item = Item.find_by name: item %>
 				<div class= "sidebar-container">
-					<%= @item.name %>
+					<h3><%= @item.name %></h3>
 					<br />
 					<%= number_to_currency(@item.price) %>
+					<br />
+					<h4 class="remove click">Remove<h4>
 				<div>
 				<br />
 			<% end %>
