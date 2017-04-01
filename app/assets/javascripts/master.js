@@ -5,7 +5,7 @@ $(document).ready(function() {
         var index = $(event.target).attr('id')
         order.splice(index, 1);
         var new_order = JSON.stringify( order );
-        Cookies.set('order', new_order);
+        Cookies.set('order', new_order, { expires: 0.042 });
         location.reload();
     });
 });
