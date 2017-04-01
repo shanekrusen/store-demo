@@ -29,6 +29,17 @@
 	</div>
 
 	<div class="sidebar">
+		<% if cookies[:order].present? %>
+			<% JSON.parse(cookies[:order]).each do |item| %>
+				<% @item = Item.find_by name: item %>
+				<div class= "sidebar-container">
+					<%= @item.name %>
+					<br />
+					<%= number_to_currency(@item.price) %>
+				<div>
+				<br />
+			<% end %>
+		<% end %>
 	</div>
 	
 	<% unless request.path == root_path %>

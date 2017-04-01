@@ -1,19 +1,20 @@
 <div style="height: 50px; width: 100%;"></div>
 
-<% @categories.each do |cat| %>
-	<div class="cat-dropdown">
-		<h1 class="click"><%= cat.name %> v</h1>
-		<div class="items-box">
-			<% cat.items.each do |item| %>
-				<h1 class="item click"><%= item.name %></h1>
-			<% end %>
+<div class="body-container">
+	<% @categories.each do |cat| %>
+		<div class="cat-dropdown">
+			<h1 class="click"><%= cat.name %> v</h1>
+			<div class="items-box">
+				<% cat.items.each do |item| %>
+					<h1 class="item click"><%= item.name %></h1>
+				<% end %>
+			</div>
 		</div>
-	</div>
-<% end %>
-
-<% if !cookies[:order].nil? %>
-	<%= JSON.parse(cookies[:order]).inspect %>
-<% end %>
+	<% end %>
+	<% if !cookies[:order].nil? %>
+		<%= JSON.parse(cookies[:order]).inspect %>
+	<% end %>
+</div>
 
 <script type="text/javascript">				
 	$(document).ready(function(){
