@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $('.remove').click(function() {
         var order = $.parseJSON( Cookies.get("order") );
