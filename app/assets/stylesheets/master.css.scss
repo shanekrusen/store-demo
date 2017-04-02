@@ -82,7 +82,7 @@ body {
 .footer h1 {
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 150%;
+  font-size: 125%;
 }
 
 .navbar-burger {
@@ -133,6 +133,13 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 5;
+  padding-left: 5px;
+  padding-top: 10px;
+  overflow: scroll;
+}
+
+.sidebar-container h3 {
+  margin: 0px;
 }
 
 .body-container {

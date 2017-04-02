@@ -30,13 +30,15 @@
 
 	<div class="sidebar">
 		<% if cookies[:order].present? %>
-			<% JSON.parse(cookies[:order]).each do |item| %>
+			<% JSON.parse(cookies[:order]).each_with_index do |item, index| %>
 				<% @item = Item.find_by name: item %>
 				<div class= "sidebar-container">
-					<%= @item.name %>
+					<h3><%= @item.name %></h3>
 					<br />
 					<%= number_to_currency(@item.price) %>
-				<div>
+					<br />
+					<%= content_tag(:h4, "Remove", class: "remove click", id: index ) %>
+				</div>
 				<br />
 			<% end %>
 		<% end %>
