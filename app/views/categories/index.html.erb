@@ -2,14 +2,32 @@
 
 <div class="body-container">
 	<% @categories.each do |cat| %>
-		<div class="cat-dropdown">
-			<h1 class="click"><%= cat.name %> v</h1>
-			<div class="items-box">
-				<% cat.items.each do |item| %>
-					<h1 class="item click"><%= item.name %></h1>
-				<% end %>
-			</div>
+		<button class="accordion"><%= cat.name %></button>
+		<div class="panel">
+			<% cat.items.each do |item| %>
+				<h1 class="item click"><%= item.name %></h1>
+			<% end %>
 		</div>
 	<% end %>
 </div>
+
+<script>
+	var acc = document.getElementsByClassName("accordion"); //Grab accordion elements
+	var i;
+	//Run this code for each element
+	for (i = 0; i < acc.length; i++) {
+	  acc[i].onclick = function () {
+	    // Toggle active class to select button that controls panel
+	    this.classList.toggle("active");
+	    
+	    /* Toggle hiding and showing active panel. If at max height, close by removing height. Otherwise, scroll to max height */
+	    var panel = this.nextElementSibling; // panel is sibling to accordion
+	    if (panel.style.maxHeight) {
+	      panel.style.maxHeight = null;
+	    } else {
+	      panel.style.maxHeight = panel.scrollHeight + "px";  
+	    }
+	  }
+	}
+</script>
 
