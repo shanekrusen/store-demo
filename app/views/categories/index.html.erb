@@ -5,7 +5,7 @@
 		<button class="accordion"><%= cat.name %></button>
 		<div class="panel">
 			<% cat.items.each do |item| %>
-				<h1 class="item click"><%= item.name %></h1>
+				<div class="item click"><%= item.name %></div>
 			<% end %>
 		</div>
 	<% end %>

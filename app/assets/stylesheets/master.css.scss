@@ -120,6 +120,11 @@ body {
   margin: 0px;
   width: 100%;
   background: #f0f0f0;
+  color: #444;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  outline: none;
 }
 
 .sidebar {
@@ -173,6 +178,7 @@ div.panel {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
 button.accordion:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
