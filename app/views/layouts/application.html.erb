@@ -29,6 +29,7 @@
 	</div>
 
 	<div class="sidebar">
+		<h3 class="sidebar-header">My Order</h3>
 		<% if cookies[:order].present? %>
 			<% JSON.parse(cookies[:order]).each_with_index do |item, index| %>
 				<% @item = Item.find_by name: item %>

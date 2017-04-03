@@ -40,12 +40,12 @@ body {
 .burgerbar {
   background: #5787d7;
   color: #FFFFFF;
-  width: 25%;
-  height: calc(75vh - 50px);
+  width: 25vw;
+  height: 100vh;
   position: fixed;
-  top: 50px;
+  top: 0px;
   left: 0;
-  z-index: 9998;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -118,8 +118,24 @@ body {
 
 .item {
   margin: 0px;
-  width: 100%;
+  width: 75vw;
   background: #f0f0f0;
+  color: #444;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  outline: none;
+  font: 13.3333px Arial;
+  flex-grow: 1;
+  margin-left: -18px;
+}
+
+.item h3 {
+  font: 13.3333px Arial;
+  color: #444;
+  width: auto;
+  flex-grow: 1;
+  margin-left: 18px;
 }
 
 .sidebar {
@@ -133,13 +149,23 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 5;
-  padding-left: 5px;
-  padding-top: 10px;
-  overflow: scroll;
+  overflow-y: scroll;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: baseline;
+}
+
+.sidebar-header {
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar-container {
+  margin-left: 5px;
+
 }
 
 .sidebar-container h3 {
-  margin: 0px;
+  margin-bottom: 0px;
 }
 
 .body-container {
@@ -149,4 +175,47 @@ body {
   position: fixed;
   top: 50px;
   left:0px;
+}
+
+button.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin: 0px;
+}
+
+button.accordion.active, button.accordion:hover {
+  background-color: #ddd;
+}
+
+div.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.force-left {
+  left: 25vw !important;
 }

@@ -15,7 +15,9 @@ $(document).ready(function() {
 $(document).ready(function(){
  $('.burgerbar').hide();
  $('.navbar-burger').click(function(){
- 	$('.burgerbar').slideToggle();
+  $('.burgerbar').toggle();
+  $('*').not( $('.burgerbar') ).toggleClass('force-left');
+  $('.sidebar').toggle();
  });
  $(".notice, .alert").click(function() {
  	$(event.target).slideToggle();
@@ -30,12 +32,26 @@ $(document).ready(function(){
 
 //Category Dropdown Code
 
-$(document).ready(function(){
-	$('.items-box').hide();
-	$('.cat-dropdown').click(function(){
-		$(this).find('.items-box').slideToggle();
-	});
-	$('.item').click(function(){
-		location.href = ('/order_cookies/add_to_order?item=' + ($(this).text()) )
-	});
+var acc = document.getElementsByClassName("accordion"); //Grab accordion elements
+$(function (){
+   var i;
+   //Run this code for each element
+   for (i = 0; i < acc.length; i++) {
+      acc[i].onclick = function () {
+       // Toggle active class to select button that controls panel
+       this.classList.toggle("active");
+       
+       /* Toggle hiding and showing active panel. If at max height, close by removing height. Otherwise, scroll to max height */
+       var panel = this.nextElementSibling; // panel is sibling to accordion
+       if (panel.style.maxHeight) {
+         panel.style.maxHeight = null;
+       } else {
+         panel.style.maxHeight = panel.scrollHeight + "px";  
+       }
+      }
+   }
+   // Add items to order on click
+   $('.item').click(function(){
+   	location.href = ('/order_cookies/add_to_order?item=' + ($(this).text()) )
+   });
 });

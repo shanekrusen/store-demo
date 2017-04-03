@@ -2,14 +2,15 @@
 
 <div class="body-container">
 	<% @categories.each do |cat| %>
-		<div class="cat-dropdown">
-			<h1 class="click"><%= cat.name %> v</h1>
-			<div class="items-box">
-				<% cat.items.each do |item| %>
-					<h1 class="item click"><%= item.name %></h1>
-				<% end %>
-			</div>
+		<button class="accordion"><%= cat.name %></button>
+		<div class="panel">
+			<% cat.items.each do |item| %>
+				<div class="item click">
+					<h3><%= item.name %></h3>
+				</div>
+			<% end %>
 		</div>
 	<% end %>
 </div>
+
 
