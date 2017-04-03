@@ -15,7 +15,9 @@ $(document).ready(function() {
 $(document).ready(function(){
  $('.burgerbar').hide();
  $('.navbar-burger').click(function(){
- 	$('.burgerbar').slideToggle();
+  $('.burgerbar').toggle();
+  $('*').not( $('.burgerbar') ).toggleClass('force-left');
+  $('.sidebar').toggle();
  });
  $(".notice, .alert").click(function() {
  	$(event.target).slideToggle();
